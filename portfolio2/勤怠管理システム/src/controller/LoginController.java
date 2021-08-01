@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import been.UserInfo;
 import service.LoginService;
 
 @WebServlet("/login")
@@ -28,7 +29,14 @@ public class LoginController extends HttpServlet{
 
 	 	try {
            LoginService ls = new LoginService();
-           ls.serch(id, pass);
+           UserInfo ui = ls.search(id, pass);
+           if(!ui.getLoginChk()) {
+        	   response.sendRedirect("/BusinessManagement/login.html");
+           }else if(ui.getLoginChk()) {
+        	   session.setAttribute("UserInfo", ui);
+        	   this.getServletContext().getRequestDispatcher("/top.jsp").forward(request, response);
+           }
+
 	 	}catch(Exception e) {
 	 		e.printStackTrace();
 	 	}finally {
