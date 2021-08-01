@@ -1,0 +1,41 @@
+/*フッターー*/
+
+.footer_top {
+	clear: both;
+	height: 110px;
+	width: 100%;
+	margin-top: 30px;
+	border-radius:  3px;
+    bottom: 0; /*下に固定*/
+}
+
+
+footer {
+	clear: both;
+	font-size: 16px;
+	color: #0000a0;
+	bottom: 0;            /*フッターを一番下に指定 */
+	margin: 0 auto;
+	text-align: center;
+
+}
+.footer_design{
+	width: 100%;
+	height: 0px;
+    bottom: 0; /*下に固定*/
+
+}
+
+.table_format {
+	font-size: 13px;
+	font-family: cursive;
+	float: right;
+	padding: 5px;
+	color: #0000a0;
+}
+
+/*cel配置*/
+.cel {
+	text-align: center;
+}
+
